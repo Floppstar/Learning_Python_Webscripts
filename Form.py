@@ -1,3 +1,5 @@
+#This is a simple Email bot, Goals: to read from excel sheet, to read system time and perform action at certain time, to be able to spam email someone with loops.
+
 import undetected_chromedriver as quiet_webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -12,10 +14,10 @@ profile = "C:\\Users\\quade\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 
 options.add_argument(f"user-data-dir={profile}")
 quiet_driver = quiet_webdriver.Chrome(options=options,use_subprocess=True)
 quiet_driver.get("https://mail.google.com/mail/u/0/#inbox?compose=new")
-quiet_driver.implicitly_wait(10)
+time.sleep(10)
 
 actions = ActionChains(quiet_driver)
-actions.send_keys("casey.gibson@selu.edu" + Keys.TAB + Keys.TAB + "From Snakey Boy" + Keys.TAB + 
+actions.send_keys("insert email here" + Keys.TAB + Keys.TAB + "From Snakey Boy" + Keys.TAB + 
 "Hello This was sent by snake man" + Keys.TAB + Keys.ENTER)
 actions.perform()
 
